@@ -4,20 +4,20 @@ import FaceIcon from '@material-ui/icons/Face';
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  fab: {
-    position: 'absolute',
-    top: theme.spacing(2),
-    right: theme.spacing(2),
-  },
+    fab: {
+        position: 'fixed',
+        top: theme.spacing(2),
+        left: theme.spacing(2),
+    },
 }));
 
 const HeaderIcon = () => {
-  const classes = useStyles();
-  return (
-    <Fab className={classes.fab} color={'primary'}>
-      <FaceIcon/>
-    </Fab>
-  );
+    const classes = useStyles();
+    return (
+        <Fab className={classes.fab} color={'primary'} size={'small'}>
+            <FaceIcon/>
+        </Fab>
+    );
 };
 
 HeaderIcon.propTypes = {};
