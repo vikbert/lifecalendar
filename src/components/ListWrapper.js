@@ -24,7 +24,7 @@ const getClass = (day) => {
     }
 };
 const ListWrapper = props => {
-    const [size, setSize] = useState(10);
+    const [size, setSize] = useState(5);
     const reset = () => setSize(5);
     const zoomIn = () => setSize(size + 5);
     const zoomOut = () => {
