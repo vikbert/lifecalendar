@@ -11,6 +11,8 @@ body {
 }
 .day {
     float: left;
+    width: 5px;
+    height: 5px;
     background: #ccc;
     list-style: none;
     margin: 1px;

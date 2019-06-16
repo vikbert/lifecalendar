@@ -35,13 +35,15 @@ const ListWrapper = props => {
     };
     const days = props.days;
     const classes = useStyles();
+    const style = size === 5 ? {} : {width: size, height: size};
+    
     return (
         <div className={classes.root}>
             <ul className={classes.list}>
                 {days.map((day, index) => {
                     const dayClass = getClass(day);
                     return (
-                        <div key={index} className={dayClass} style={{width: size, height: size}}/>
+                        <div key={index} className={dayClass} style={style}/>
                     );
                 })}
             </ul>

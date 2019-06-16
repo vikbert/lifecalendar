@@ -1,10 +1,13 @@
 import React, {memo} from 'react';
 import moment from 'moment';
-import ListWrapper from './components/ListWrapper';
+
 import HeaderIcon from './components/HeaderIcon';
 import getDates from './utils/dates';
-
+import Loading from "./components/Loading";
 require('./utils/storage');
+
+const { lazy, Suspense } = React;
+const ListWrapper = lazy(() => import('./components/ListWrapper'));
 
 function App() {
     let currentMoment = moment().startOf("day");
@@ -21,7 +24,9 @@ function App() {
     return (
         <div className="App">
             <HeaderIcon top={2} right={2}/>
-            <ListWrapper days={viewData} />
+            <Suspense fallback={<Loading/>}>
+                <ListWrapper days={viewData} />
+            </Suspense>
         </div>
     );
 }
