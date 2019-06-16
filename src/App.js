@@ -9,7 +9,7 @@ require('./utils/storage');
 function App() {
     let currentMoment = moment().startOf("day");
     const birthday = new Date(1978, 9, 9);
-    const yearLater = moment(birthday).add(80, "year").startOf("day").toDate();
+    const yearLater = moment(birthday).add(65, "year").startOf("day").toDate();
     const data = getDates(moment(birthday), yearLater);
     window.appStorage.save({
         dataCaching: data,
