@@ -1,34 +1,18 @@
-import React, {memo} from 'react';
-import moment from 'moment';
+import React from 'react';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import Register from './components/register/Register';
+import LiveCalendar from './components/LifeCalendar';
+import PrivateRoute from './routes/PrivateRoute';
+import NotFound from "./components/NotFound";
 
-import HeaderIcon from './components/HeaderIcon';
-import getDates from './utils/dates';
-import Loading from "./components/Loading";
-require('./utils/storage');
+const App = () => (
+    <Router>
+        <Switch>
+            <Route exact path={'/register'} component={Register}/>
+            <PrivateRoute exact path={'/'} component={LiveCalendar}/>
+            <Route component={NotFound}/>
+        </Switch>
+    </Router>
+);
 
-const { lazy, Suspense } = React;
-const ListWrapper = lazy(() => import('./components/ListWrapper'));
-
-function App() {
-    let currentMoment = moment().startOf("day");
-    const birthday = new Date(1978, 9, 9);
-    const yearLater = moment(birthday).add(65, "year").startOf("day").toDate();
-    const data = getDates(moment(birthday), yearLater);
-    window.appStorage.save({
-        dataCaching: data,
-        currentDay: currentMoment.format('YYYY-MM-DD'),
-    });
-
-    const viewData = Object.values(data);
-
-    return (
-        <div className="App">
-            <HeaderIcon top={2} right={2}/>
-            <Suspense fallback={<Loading/>}>
-                <ListWrapper days={viewData} />
-            </Suspense>
-        </div>
-    );
-}
-
-export default memo(App);
+export default App;
