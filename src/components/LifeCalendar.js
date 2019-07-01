@@ -15,7 +15,7 @@ function LifeCalendar() {
     const birthday = new Date(1978, 9, 9);
     const yearLater = moment(birthday).add(65, "year").startOf("day").toDate();
     const data = getDates(moment(birthday), yearLater);
-    window.appStorage.save({
+    window.appStorage.save('LIVE_CALENDAR_DATES', {
         dataCaching: data,
         currentDay: currentMoment.format('YYYY-MM-DD'),
     });

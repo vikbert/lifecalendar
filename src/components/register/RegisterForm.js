@@ -9,7 +9,7 @@ const RegisterForm = () => {
 
     function handleDateChange(date) {
         setSelectedDate(date);
-        console.log(date);
+        window.appStorage.save('LIVE_CALENDAR_BIRTHDAY', date);
     }
 
     return (

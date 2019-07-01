@@ -1,8 +1,7 @@
-const STORAGE_KEY = 'REACT_APP_LIFE_GRID';
 window.appStorage = {
-    fetch: function() {
+    fetch: function(key) {
         try {
-            const serializedState = localStorage.getItem(STORAGE_KEY);
+            const serializedState = localStorage.getItem(key);
             if (serializedState === null) {
                 return undefined;
             }
@@ -12,10 +11,10 @@ window.appStorage = {
             return undefined;
         }
     },
-    save: function(data) {
+    save: function(key, data) {
         try {
             const serializedData = JSON.stringify(data);
-            localStorage.setItem(STORAGE_KEY, serializedData);
+            localStorage.setItem(key, serializedData);
         } catch {
             // ignore write errors
         }
