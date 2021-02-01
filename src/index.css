@@ -25,3 +25,10 @@ body {
 .currentDay {
     background: #d9312c;
 }
+.popup {
+  max-width: none !important;
+}
+.toggle-container {
+  height: 280px;
+  padding-top: 20px;
+}

@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         position: "fixed",
         borderRadius: "2px",
         padding: "1px",
-        top: theme.spacing(8),
+        top: theme.spacing(14),
         left: '22px',
     },
     button: {

@@ -6,7 +6,7 @@ import {makeStyles} from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
     fab: {
         position: 'fixed',
-        top: theme.spacing(2),
+        top: '72px',
         left: theme.spacing(2),
     },
 }));
