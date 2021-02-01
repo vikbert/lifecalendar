@@ -32,3 +32,9 @@ body {
   height: 280px;
   padding-top: 20px;
 }
+.logo {
+  height: 40px;
+}
+.topbar {
+  background-color: white;
+}

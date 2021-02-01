@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { memo, useState } from 'react';
 import moment from 'moment';
 import HeaderIcon from './HeaderIcon';
 import getDates from '../utils/dates';
 import Loading from './Loading';
+import logo from '../assets/logo.png';
 require('../utils/storage');
 
 // lazy load list component
@@ -33,7 +35,7 @@ function LifeCalendar() {
     <div>
       <header className="header">
         <nav className="topbar">
-          <div className="emoji">⏰</div>
+          <img className="logo" src={logo} alt='logo'/>
         </nav>
       </header>
       <div className={open ? 'overlay open' : 'overlay'}>
@@ -57,7 +59,12 @@ function LifeCalendar() {
             ></iframe>
           </div>
           <div className="action">
-            <button className="is-outlined is-rounded is-cleared" onClick={ togglePopup }>close</button>
+            <button
+              className="is-outlined is-rounded is-cleared"
+              onClick={togglePopup}
+            >
+              close
+            </button>
           </div>
         </div>
       </div>
